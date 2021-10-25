@@ -62,7 +62,7 @@ namespace PiramidaFinansowa {
                 members = members.OrderBy((member) => member.id).ToList();
                 members.ForEach((member) => {
                     Console.WriteLine(
-                        $"{member.id} " +
+                        $"{member.id} "+
                         $"{member.position} " +
                         $"{member.childs} " +
                         $"{member.balance} "
