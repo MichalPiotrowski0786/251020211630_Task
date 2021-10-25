@@ -1,4 +1,5 @@
 # Financial pyramid scheme with diffrent values calculated for members of this structure
+## Author: Michał Piotrowski
 
 ## Technologies used:
 
@@ -23,6 +24,3 @@
 
 ## Copyright laws:
 
-| Authors |
-| :---: |
-| Michał Piotrowski |
