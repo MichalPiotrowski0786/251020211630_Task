@@ -12,7 +12,7 @@
     <img src="PiramidaFinansowa/Screenshots/withdesc.png">
   </kbd>
 </p>
-
+<div align="center">
 ## Technologies used:
 
 | Technology | Link |
@@ -34,4 +34,4 @@
 | WF5 | Function | Make path universal | Path to project location is dynamically changed whenever we change project's location | N | Y |
 | WF6 | Testing | Manual Tests | Test code with different scenarios to remove bugs | Y | Y |
 | WF7 | Testing | Unit Tests | Run unit test to eliminate even more dead ends | N | N |
-
+</div>
