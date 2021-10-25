@@ -20,3 +20,9 @@
 | WF4 | Function | Solve every subsection of financial pyramid scheme | Define owner, transfer all members money to owner and split earning for members that met requirements | Y | Y |
 | WF5 | Testing | Manual Tests | Test code with different scenarios to remove bugs | Y | Y |
 | WF6 | Testing | Unit Tests | Run unit test to eliminate even more dead ends | N | N |
+
+## Copyright laws:
+
+| Authors | Licension | Link |
+| :---: | :---: | :---: |
+| Oskar Cyms, Paweł Rogoża, Michał Piotrowski | Creative Commons(CC BY-NC-ND) | https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode |
