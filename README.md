@@ -26,7 +26,7 @@
 
 | Id | Category | Name | Description | Required?(Y/N) | Done?(Y/N) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| WF0 | Function | Read input files | Reading 2 input files, first for getting members scheme and second for getting their transactions | Y | Y |
+| WF0 | Function | Read input files | Reading 2 input files, first for getting members scheme and second for getting their transactions | Y | [X] |
 | WF1 | Function | Validate input files | Validate files to check if they meet requirements for Xml Reader | Y | Y |
 | WF2 | Function | Parse data of each member | Get ids, positions in hierarchy, transactions etc. for each member | Y | Y |
 | WF3 | Function | Send parsed member data to member object(class) | This helps with organization of code etc. | N | Y |
