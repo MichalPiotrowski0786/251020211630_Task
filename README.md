@@ -1,5 +1,5 @@
 # Piramida Finansowa
-Financial pyramid scheme with diffrent values calculated for members of this structure
+### Financial pyramid scheme with diffrent values calculated for members of this structure
 
 ## Screenshots:
 <p align="center">
