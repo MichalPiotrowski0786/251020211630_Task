@@ -1,4 +1,5 @@
-# Financial pyramid scheme with diffrent values calculated for members of this structure
+# Piramida Finansowa
+Financial pyramid scheme with diffrent values calculated for members of this structure
 
 ## Technologies used:
 
