@@ -1,6 +1,18 @@
 # Piramida Finansowa
 Financial pyramid scheme with diffrent values calculated for members of this structure
 
+## Screenshots:
+<p align="center">
+  <kbd>
+    <img src="/Assets/Screenshots/0.png?raw=true">
+  </kbd>
+</p>
+<p align="center">
+  <kbd>
+    <img src="/Assets/Screenshots/1.png?raw=true">
+  </kbd>
+</p>
+
 ## Technologies used:
 
 | Technology | Link |
