@@ -12,10 +12,11 @@
     <img src="PiramidaFinansowa/Screenshots/withdesc.png">
   </kbd>
 </p>
-<div align="center">
   
 ## Technologies used:
 
+<div align="center">
+    
 | Technology | Link |
 | :---: | :---: |
 | IDE: Visual Studio 2019 | https://visualstudio.microsoft.com/vs |
@@ -23,7 +24,11 @@
 | Version Control: Git & Github | https://github.com |
 | XML| https://www.w3schools.com/xml/xml_whatis.asp |
 
+</div>
+  
 ## Functional requirements:
+
+<div align="center">
 
 | Id | Category | Name | Description | Required?(Y/N) | Done?(Y/N) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
