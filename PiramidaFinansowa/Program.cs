@@ -5,31 +5,41 @@ using System.Xml;
 
 namespace PiramidaFinansowa {
     class Program {
-        static string basePath = Path.GetFullPath(@"..\..\..\Input");
-        static string piramidaFilePath = $@"{basePath}\piramida.xml";
-        static string przelewyFilePath = $@"{basePath}\przelewy.xml";
+
+        static readonly string basePath = Path.GetFullPath(@"..\..\..\Input");
+        static readonly string piramidFilePath = $@"{basePath}\piramida.xml";
+        static readonly string transfersFilePath = $@"{basePath}\przelewy.xml";
+
         static void Main() {
-            var piramidaDocument = ReadXmlFile(piramidaFilePath);
-            ResolvePiramidaHierarchy(piramidaDocument);
+            var piramidDoc = ReadXmlFile(piramidFilePath);
+            var transfersDoc = ReadXmlFile(transfersFilePath);
+
+            if(piramidDoc != null || transfersDoc != null) ResolvePiramidHierarchy(piramidDoc,transfersDoc);
         }
 
-        static void ResolvePiramidaHierarchy(XmlDocument doc) {
-            var documentNode = doc.GetElementsByTagName("uczestnik");
-            List<Uczestnik> Uczestnicy = new();
+        static void ResolvePiramidHierarchy(XmlDocument baseDoc, XmlDocument transfersDoc) {
+            var mainNode = baseDoc.GetElementsByTagName("uczestnik");
+            List<Member> members = new();
 
-            foreach(XmlNode Node in documentNode) {
-                Uczestnik User = new ();
-                User.id = int.Parse(Node.Attributes["id"].Value);
+            foreach(XmlNode Node in mainNode) {
+                int id = int.Parse(Node.Attributes["id"].Value);
 
                 int positionIndex = 0;
-                User.position = CalculateUserPosition(positionIndex, Node);
+                int position = CalculateUserPosition(positionIndex, Node);
 
-                Uczestnicy.Add(User);
+                int childsIndex = 0;
+                int childs = CalculateChildsWithNoChilds(childsIndex, Node);
+
+                uint transferSum = ReturnSumOfMemberTransfers(id, transfersDoc);
+
+                members.Add(new(id, position, childs, transferSum));
             }
 
-            if(Uczestnicy.Count > 0) {
-                foreach(Uczestnik User in Uczestnicy) {
-                    Console.WriteLine($"{User.id} {User.position} {User.childs} -1");
+            if(members.Count > 0) {
+                foreach(Member member in members) {
+                    Console.WriteLine(
+                        $"{member.id} {member.position} {member.childs} {member.transfersSum}"
+                    );
                 }
             }
         }
@@ -40,11 +50,34 @@ namespace PiramidaFinansowa {
             if(parentName != "piramida") {
                 index++;
                 index = CalculateUserPosition(index, node.ParentNode);
-            } else {
-                return index;
             }
 
             return index;
+        }
+
+        static int CalculateChildsWithNoChilds(int index, XmlNode node) {
+            if(node.HasChildNodes) {
+                foreach(XmlNode childNode in node.ChildNodes) {
+                    if(!childNode.HasChildNodes) index++;
+                    else index = CalculateChildsWithNoChilds(index, childNode);
+                }
+            }
+
+            return index;
+        }
+
+        static uint ReturnSumOfMemberTransfers(int id, XmlDocument transfersDoc) {
+            var transfersNodeList = transfersDoc.GetElementsByTagName("przelew");
+            uint sum = 0;
+
+            if(transfersNodeList.Count > 0) {
+                foreach(XmlNode transferNode in transfersNodeList) {
+                    if(int.Parse(transferNode.Attributes["od"].Value) == id)
+                        sum += uint.Parse(transferNode.Attributes["kwota"].Value);
+                }
+            }
+
+            return sum;
         }
 
         static XmlDocument ReadXmlFile(string path) {
@@ -62,21 +95,18 @@ namespace PiramidaFinansowa {
         }
     }
 
-    public class Uczestnik {
+    public class Member {
+        // using class to better organize individual members and actions related to them
         public int id { get; set; }
         public int position { get; set; }
         public int childs { get; set; }
+        public uint transfersSum { get; set; }
 
-        public Uczestnik(int id, int position, int childs) {
+        public Member(int id, int position, int childs, uint transfersSum) {
             this.id = id;
             this.position = position;
             this.childs = childs;
-        }
-
-        public Uczestnik() {
-            this.id = -1;
-            this.position = -1;
-            this.childs = -1;
+            this.transfersSum = transfersSum;
         }
     }
 }
