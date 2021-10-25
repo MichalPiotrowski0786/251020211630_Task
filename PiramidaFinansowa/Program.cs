@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml;
 
 namespace PiramidaFinansowa {
@@ -38,15 +39,12 @@ namespace PiramidaFinansowa {
 
             if(members.Count > 0) {
                 Member owner = null;
-                foreach(Member member in members) {
-                    if(member.position == 0) owner = member;
-                }
-
-                foreach(Member member in members) {
-                    member.transferMoney(member.balance, owner);
-                }
-
-                foreach(Member member in members) {
+                // find owner and assign it to variable
+                members.ForEach((member) => { if(member.position == 0) owner = member; });
+                // all members transfer money to owner
+                members.ForEach((member) => member.transferMoney(member.balance, owner));
+                // transfer money from owner to members that fulfilled condition
+                members.ForEach((member) => {
                     if(member.childs > 0) {
                         List<Member> childs = new();
                         foreach(Member _member in members) {
@@ -59,16 +57,17 @@ namespace PiramidaFinansowa {
                             }
                         }
                     }
-                }
+                });
 
-                foreach(Member member in members) {
+                members = members.OrderBy((member) => member.id).ToList();
+                members.ForEach((member) => {
                     Console.WriteLine(
                         $"{member.id} " +
                         $"{member.position} " +
                         $"{member.childs} " +
                         $"{member.balance} "
                     );
-                }
+                });
             }
         }
 
