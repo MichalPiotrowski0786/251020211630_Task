@@ -4,12 +4,12 @@ Financial pyramid scheme with diffrent values calculated for members of this str
 ## Screenshots:
 <p align="center">
   <kbd>
-    <img src="/Assets/Screenshots/0.png?raw=true">
+    <img src="PiramidaFinansowa/Screenshots/raw.png">
   </kbd>
 </p>
 <p align="center">
   <kbd>
-    <img src="/Assets/Screenshots/1.png?raw=true">
+    <img src="PiramidaFinansowa/Screenshots/withdesc.png">
   </kbd>
 </p>
 
