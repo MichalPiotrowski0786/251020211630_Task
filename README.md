@@ -1,7 +1,6 @@
-# PiramidaFinansowa
-## Financial pyramid scheme with diffrent values calculated for members of this structure
+# Financial pyramid scheme with diffrent values calculated for members of this structure
 
-Technologies used:
+## Technologies used:
 
 | Technology | Link |
 | :---: | :---: |
@@ -10,7 +9,7 @@ Technologies used:
 | Version Control: Git & Github | https://github.com |
 | XML| https://www.w3schools.com/xml/xml_whatis.asp |
 
-Functional requirements:
+## Functional requirements:
 
 | Id | Category | Name | Description | Required?(Y/N) | Done?(Y/N) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
