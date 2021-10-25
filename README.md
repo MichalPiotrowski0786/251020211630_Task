@@ -21,5 +21,3 @@
 | WF5 | Testing | Manual Tests | Test code with different scenarios to remove bugs | Y | Y |
 | WF6 | Testing | Unit Tests | Run unit test to eliminate even more dead ends | N | N |
 
-## Copyright laws:
-
