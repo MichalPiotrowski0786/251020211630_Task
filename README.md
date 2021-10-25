@@ -31,6 +31,7 @@
 | WF2 | Function | Parse data of each member | Get ids, positions in hierarchy, transactions etc. for each member | Y | Y |
 | WF3 | Function | Send parsed member data to member object(class) | This helps with organization of code etc. | N | Y |
 | WF4 | Function | Solve every subsection of financial pyramid scheme | Define owner, transfer all members money to owner and split earning for members that met requirements | Y | Y |
-| WF5 | Testing | Manual Tests | Test code with different scenarios to remove bugs | Y | Y |
-| WF6 | Testing | Unit Tests | Run unit test to eliminate even more dead ends | N | N |
+| WF5 | Function | Make path universal | Path to project location is dynamically changed whenever we change project's location | N | Y |
+| WF6 | Testing | Manual Tests | Test code with different scenarios to remove bugs | Y | Y |
+| WF7 | Testing | Unit Tests | Run unit test to eliminate even more dead ends | N | N |
 
