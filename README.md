@@ -1,4 +1,4 @@
-# Piramida Finansowa
+# 2510202111630_Task
 #### *Financial pyramid scheme with diffrent values calculated for members of this structure*
 
 ## Screenshots:
